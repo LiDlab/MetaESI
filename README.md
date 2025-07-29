@@ -72,12 +72,24 @@ MetaESI can run on Linux environments (tested on Ubuntu 18.04)​. We highly rec
    git clone https://github.com/LiDlab/MetaESI.git
    cd MetaESI
    ```
-2. Create conda environment for MetaESI
+2. Create and activate the environement with:
    ```sh
    conda env create -f environment.yml
    conda activate MetaESI
    ```
-3. Based on your use, you may need to download data
+   Or install manually the dependencies:
+   ```sh
+   conda create -n MetaESI python==3.8
+   conda install pyg==2.5.2 -c pyg
+   conda install pytorch pytorch-cuda=11.8 -c pytorch -c nvidia
+   pip install learn2learn==0.2.0
+   conda install pandas==1.5.3
+   conda install h5py==3.11.0
+   conda install biopython==1.78
+   ```
+
+   
+4. Based on your use, you may need to download data
 
    Datasets (validation and test) and features for training MetaESI are provided in [MetaESI data(~82M)](https://zenodo.org/records/10467917/files/data.tar.gz?download=1)
 
