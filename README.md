@@ -70,10 +70,12 @@ MetaESI can run on Linux environments (tested on Ubuntu 18.04)​. We highly rec
 1. Clone the repo
    ```sh
    git clone https://github.com/LiDlab/MetaESI.git
+   cd MetaESI
    ```
 2. Create conda environment for MetaESI
    ```sh
    conda env create -f environment.yml
+   conda activate MetaESI
    ```
 3. Based on your use, you may need to download data
 
