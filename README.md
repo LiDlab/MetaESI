@@ -61,7 +61,7 @@ To get a local copy up and running, follow these steps:
 ### Dependencies
 MetaESI is tested to work under Python 3.8.
 The required dependencies for MetaESI are  [Pytorch](https://pytorch.org/), [PyG](https://pytorch-geometric.readthedocs.io/en/latest/) and [scikit-learn](http://scikit-learn.org/).
-Check environments.yml for list of needed packages.
+Check [environments.yml](https://github.com/LiDlab/MetaESI/blob/main/environment.yml) for list of needed packages.
 
 MetaESI can run on Linux environments (tested on Ubuntu 18.04)​. We highly recommend installing and running this software on a computer with a discrete NVIDIA graphics card (models that support CUDA). If there is no discrete graphics card, the program can also run on the CPU, but it may require a longer runtime.
 
