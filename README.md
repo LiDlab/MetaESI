@@ -60,10 +60,11 @@ To get a local copy up and running, follow these steps:
 
 ### Dependencies
 MetaESI is tested to work under Python 3.8.
-The required dependencies for MetaESI are  [Pytorch](https://pytorch.org/), [PyG](https://pytorch-geometric.readthedocs.io/en/latest/) and [scikit-learn](http://scikit-learn.org/).
-Check [environments.yml](https://github.com/LiDlab/MetaESI/blob/main/environment.yml) for list of needed packages.
+The required dependencies for MetaESI are  [Pytorch](https://pytorch.org/), [PyG](https://pytorch-geometric.readthedocs.io/en/latest/) and [Biopython](https://biopython.org/).
+Check [environments.yml](https://github.com/LiDlab/MetaESI/blob/main/environment.yml) for list of needed packages. 
+The specific dependencies can be easily installed using [Anaconda](https://www.anaconda.com/).
 
-MetaESI can run on Linux environments (tested on Ubuntu 18.04)​. We highly recommend installing and running this software on a computer with a discrete NVIDIA graphics card (models that support CUDA). If there is no discrete graphics card, the program can also run on the CPU, but it may require a longer runtime.
+MetaESI can run on Linux environments (tested on Ubuntu 18.04, Ubuntu 22.04). We highly recommend installing and running this software on a computer with a discrete NVIDIA graphics card (models that support CUDA). If there is no discrete graphics card, the program can also run on the CPU, but it may require a longer runtime.
 
 ### Installation
 
@@ -83,20 +84,26 @@ MetaESI can run on Linux environments (tested on Ubuntu 18.04)​. We highly rec
    conda activate MetaESI
    conda install pyg==2.5.2 -c pyg
    conda install pytorch pytorch-cuda=11.8 -c pytorch -c nvidia
+   pip install learn2learn==0.2.0
    conda install pandas==1.5.3
    conda install h5py==3.11.0
    conda install biopython==1.78
-   pip install learn2learn==0.2.0 opencv-python==4.10.0.84 numpy==1.23.2
    ```
 3. Download all data:
 
-   Datasets (validation and test) and features for training MetaESI are provided in [MetaESI data(~82M)](https://zenodo.org/records/10467917/files/data.tar.gz?download=1)
-
-   Uncompress `tar.gz` file into the MetaESI directory
-   ```sh
-   tar -zxvf data.tar.gz -C /path/to/MetaESI
+    * Install `aria2c`. On Debian-based distributions this can be installed by running:
+    ```sh
+    sudo apt install aria2
    ```
-The time it takes to install the required software for MetaESI on a "normal" desktop computer is no longer than on a professional computer with a discrete graphics card. Setting up Python and the corresponding dependency packages in the Windows 10 system will not take more than 15 minutes. If you need help, please refer to the [link](https://geekflare.com/pytorch-installation-windows-and-linux/).
+
+    * Please use the script `scripts/download_all_data.sh` to download and set
+        up all databases. This may take substantial time (download size is ~85
+        GB), so we recommend running this script in the background:
+
+    ```bash
+    scripts/download_all_data.sh data/human/ > download_all.log &
+    ```
+
 
 ### Folders
 ./src contains the implementation for the fivefold cross-validations and independent tests of MetaESI and Baselines.
