@@ -83,10 +83,10 @@ MetaESI can run on Linux environments (tested on Ubuntu 18.04)​. We highly rec
    conda activate MetaESI
    conda install pyg==2.5.2 -c pyg
    conda install pytorch pytorch-cuda=11.8 -c pytorch -c nvidia
-   pip install learn2learn==0.2.0
    conda install pandas==1.5.3
    conda install h5py==3.11.0
    conda install biopython==1.78
+   pip install learn2learn==0.2.0 opencv-python==4.10.0.84 numpy==1.23.2
    ```
 3. Download all data:
 
