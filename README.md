@@ -47,7 +47,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 <p align="center">
-  <img src="models/Fig1.jpg" alt="MetaESI v1.0 architecture" width="900">
+  <img src="models/Fig1_2.jpg" alt="MetaESI v1.0 architecture" width="900">
   <br>
   <b>Figure</b>: MetaESI Overall Architecture
 </p>
