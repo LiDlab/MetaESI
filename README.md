@@ -144,6 +144,8 @@ Importing normalized sequence similarity matrix...
 Done.
 Transferred model and data to GPU
 The MetaESI score of Q14694 and Q00987 is 0.9654.
+<span style="color:red">Scaled score: 0.517</span>
+<span style="color:red">MetaESI confidence: low</span>
 ```
 
 Under normal circumstances, MetaESI typically takes around 100 seconds to predict the MetaESI score for a candidate DSI pair.
