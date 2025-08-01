@@ -247,7 +247,7 @@ Zoomed Interface Hotspot (Zoomed 21×21 region centered at maximum probability):
 
 **📒 Note:** You may directly include these visualizations in research publications. Download the reference color bar for proper heatmap interpretation:
 <p align="center">
-  <a href="results/test/bar.png" download>
+  <a href="https://github.com/LiDlab/MetaESI/raw/main/results/test/bar.png" download>
     <img src="results/test/bar.png" alt="MetaESI heatmap color scale reference" width="40" style="border: 1px solid #eee; border-radius: 4px">
   </a>
   <br>
@@ -279,17 +279,21 @@ CPU execution: Add `--gpu -1` to command (may take 2-4 minutes per pair)
     ```bash
     scripts/download_all_data.sh data/human/ > download_all.log &
     ```
+   Note: 有时可能由于网络问题导致有一些PAE文件下载不下来，这时请运行:
+    ```bash
+    scripts/download_alphafold_pae.sh data/human/
+    ```
 
-
-
-If you want to replicate the five-fold cross-validation and independent testing process of MetaESI, please run the `main.py` script in the src folder.
-```sh
-cd src/
-```
-AND
-```sh
-python main_GSD.py && python main_GSD_MetaESI_variant.py && python main_GSD_ML.py
-```
+2. Preprocess the features:
+   * 生成GARD特征
+    ```sh
+   python gard/preprocessing/preprocessing_features.py
+   ```
+   
+    * 生成MetaESI特征
+   ```sh
+   python metaesi/preprocessing/preprocessing_features.py
+   ```
 
 ### Folders
 ./src contains the implementation for the fivefold cross-validations and independent tests of MetaESI and Baselines.
