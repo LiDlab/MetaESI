@@ -109,7 +109,7 @@ python scripts/run_MetaESI.py \
   -o <output_directory>
 ```
 
-#### Example: SPOP-BRD3 [SPOP-BRD3](https://www.sciencedirect.com/science/article/abs/pii/S002228361930213X) Interaction
+#### Example: [SPOP-BRD3](https://www.sciencedirect.com/science/article/abs/pii/S002228361930213X) Interaction
 
 ```sh
 python scripts/run_MetaESI.py -e O43791 -s Q15059 -o results/test/
@@ -218,30 +218,48 @@ This will create a gradient visualization where:
 * Blue regions indicate low-probability interface residues
 * Gray regions indicate non-interface residues with transparency
 
+<p align="center">
+  <img src="results/test/O43791_MetaESI_colored.png" alt="Interface map visualization between E3 O43791 and substrate Q15059" width="370">
+  <br>
+  O43791_MetaESI_colored.pdb
+</p>
+
+
 
 #### Interface Map Interpretation
 
-Full Interface Map
+Full Interface Map (Residue-residue interaction probability matrix)
 
-(`O43791_Q15059_imap.pdf`):
-
-<p align="center">
-  <img src="results/test/O43791_Q15059_imap.png" alt="Interface map visualization between E3 O43791 and substrate Q15059" width="500">
-  <br>
-  Residue-residue interaction probability matrix
-</p>
-
-Zoomed Interface Hotspot (`O43791_Q15059_hotspot.pdf`):
 
 <p align="center">
-  <img src="results/test/O43791_Q15059_hotspot.png" alt="Interface map visualization between E3 O43791 and substrate Q15059" width="500">
+  <img src="results/test/O43791_Q15059_imap.png" alt="Interface map visualization between E3 O43791 and substrate Q15059" width="370">
   <br>
-  Zoomed 21×21 region centered at maximum probability
+  O43791_Q15059_imap.pdf
 </p>
+
+Zoomed Interface Hotspot (Zoomed 21×21 region centered at maximum probability):
+
+<p align="center">
+  <img src="results/test/O43791_Q15059_hotspot.png" alt="Interface map visualization between E3 O43791 and substrate Q15059" width="370">
+  <br>
+  O43791_Q15059_hotspot.pdf
+</p>
+
+**📒 Note:** You may directly include these visualizations in research publications. Download the reference color bar for proper heatmap interpretation:
+<p align="center">
+  <a href="results/test/bar.png" download>
+    <img src="results/test/bar.png" alt="MetaESI heatmap color scale reference" width="40" style="border: 1px solid #eee; border-radius: 4px">
+  </a>
+  <br>
+  <b>Color Scale Reference</b> (click image to download)
+</p>
+
 
 #### Runtime Information
 GPU execution (recommended): ~110 seconds per pair
+
 CPU execution: Add `--gpu -1` to command (may take 2-4 minutes per pair)
+
 
 
 ### Reproducibility
