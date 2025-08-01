@@ -43,7 +43,6 @@
 
 ## About The Project
 [![MetaESI](https://img.shields.io/github/v/release/Dianke-Li/MetaESI?include_prereleases)](https://github.com/Dianke-Li/MetaESI/releases)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10866136.svg)](https://zenodo.org/records/10866136)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 <p align="center">
@@ -232,7 +231,7 @@ Full Interface Map (Residue-residue interaction probability matrix)
 
 
 <p align="center">
-  <img src="results/test/O43791_Q15059_imap.png" alt="Interface map visualization between E3 O43791 and substrate Q15059" width="370">
+  <img src="results/test/O43791_Q15059_imap.png" alt="Interface map visualization between E3 O43791 and substrate Q15059" width="340">
   <br>
   O43791_Q15059_imap.pdf
 </p>
@@ -247,7 +246,7 @@ Zoomed Interface Hotspot (Zoomed 21×21 region centered at maximum probability):
 
 **📒 Note:** You may directly include these visualizations in research publications. Download the reference color bar for proper heatmap interpretation:
 <p align="center">
-  <a href="https://github.com/LiDlab/MetaESI/raw/main/results/test/bar.png" download>
+  <a href="https://github.com/LiDlab/MetaESI/raw/main/results/test/bar.pdf" download>
     <img src="results/test/bar.png" alt="MetaESI heatmap color scale reference" width="40" style="border: 1px solid #eee; border-radius: 4px">
   </a>
   <br>
@@ -294,6 +293,8 @@ CPU execution: Add `--gpu -1` to command (may take 2-4 minutes per pair)
    ```sh
    python metaesi/preprocessing/preprocessing_features.py
    ```
+   
+3. 进入具体的目录根据需求运行脚本
 
 ### Folders
 ./src contains the implementation for the fivefold cross-validations and independent tests of MetaESI and Baselines.
