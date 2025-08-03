@@ -9,30 +9,35 @@
       <a href="#about-the-project">About The Project</a>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#installation">Installation</a>
       <ul>
         <li><a href="#dependencies">Dependencies</a></li>
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#folders">Folders</a></li>
+        <li><a href="#installation-steps">Installation Steps</a></li>
       </ul>
     </li>
     <li>
       <a href="#usage">Usage</a>
       <ul>
-        <li><a href="#dsi-prediction">DSI prediction</a></li>
-        <li><a href="#dsi-binding-site-inference">DSI key sequence feature inference</a></li>
+        <li><a href="#predicting-esi-interactions--interfaces">Predicting ESI Interactions & Interfaces</a></li>
+        <li><a href="#example-spop-brd3-interaction">Example: SPOP-BRD3 Interaction</a></li>
       </ul>
+    </li>
+    <li>
+      <a href="#visualization">Visualization</a>
+      <ul>
+        <li><a href="#pymol-interface-visualization">PyMOL Interface Visualization</a></li>
+        <li><a href="#interface-map-interpretation">Interface Map Interpretation</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#reproducibility">Reproducibility</a>
     </li>
     <li>
       <a href="#available-data">Available Data</a>
       <ul>
         <li><a href="#gold-standard-dataset-gsd">Gold Standard Dataset (GSD)</a></li>
-        <li><a href="#benchmark-dataset">Benchmark Dataset</a></li>
-        <li><a href="#predicted-E3-substrate-interaction-dataset-pdsid">Predicted E3-Substrate Interaction Dataset (PDSID)</a></li>
+        <li><a href="#predicted-e3-substrate-interactome-metaesi-atlas">Predicted E3-Substrate Interactome (MetaESI-Atlas)</a></li>
       </ul>
-    </li>
-    <li>
-      <a href="#License">License</a>
     </li>
     <li>
       <a href="#Contact">Contact</a>
@@ -80,7 +85,7 @@
 Check [environments.yml](https://github.com/LiDlab/MetaESI/blob/main/environment.yml) for list of needed packages. 
 The specific dependencies can be easily installed using [Anaconda](https://www.anaconda.com/).
 
-### Installation
+### Installation Steps
 
 1. Clone repository and `cd` into it:
    ```sh
