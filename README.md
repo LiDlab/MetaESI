@@ -47,7 +47,7 @@
 
 
 ## About The Project
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16730430.svg)](https://zenodo.org/records/16730430)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16730897.svg)](https://zenodo.org/records/16730897)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![Platform](https://img.shields.io/badge/platform-linux-blue.svg)
 ![Python Version](https://img.shields.io/badge/python-3.8-blue.svg)
@@ -66,7 +66,7 @@
 - **ESI Probability Prediction**: Predicts interaction likelihood for any E3-substrate pair
 - **Residue-Level Interface Inference**: Identifies binding interfaces _de novo_
 - **Research-Ready Visualizations**: Generates [interface maps](https://github.com/LiDlab/MetaESI/tree/main#interface-map-interpretation) and [annotated PDB structures](https://github.com/LiDlab/MetaESI/tree/main#pymol-interface-visualization)
-- **Rapid Execution**: [Installs](https://github.com/LiDlab/MetaESI/tree/main?tab=readme-ov-file#installation-steps) in <30 minutes; [predictions](https://github.com/LiDlab/MetaESI/tree/main?tab=readme-ov-file#predicting-esi-interactions--interfaces) in <2 minutes (GPU)
+- **Rapid Execution**: Installs in <30 minutes; predictions in <2 minutes (GPU)
 - **Cross-Platform Support**: GPU acceleration or CPU-only operation
 
 
@@ -234,8 +234,19 @@ set cartoon_transparency, 0.7, gray_residues
 set transparency, 0.7, gray_residues
 ```
 
-<p align="center"> <img src="results/test/O43791_MetaESI_colored.png" alt="O43791" width="42%"> <img src="results/test/Q15059_MetaESI_colored.png" alt="Q15059" width="35%"> <br>O43791_MetaESI_colored.pdb   |   Q15059_MetaESI_colored.pdb</p>
+[//]: # (<p align="center"> <img src="results/test/O43791_MetaESI_colored.png" alt="O43791" width="42%"> <img src="results/test/Q15059_MetaESI_colored.png" alt="Q15059" width="35%"> <br>O43791_MetaESI_colored.pdb   |   Q15059_MetaESI_colored.pdb</p>)
 
+<p align="center">
+  <a href="https://github.com/LiDlab/MetaESI/blob/main/results/test/O43791_MetaESI_colored.pdb" target="_blank">
+    <img src="results/test/O43791_MetaESI_colored.png" alt="O43791" width="42%">
+  </a>
+  <a href="https://github.com/LiDlab/MetaESI/blob/main/results/test/Q15059_MetaESI_colored.pdb" target="_blank">
+    <img src="results/test/Q15059_MetaESI_colored.png" alt="Q15059" width="35%">
+  </a>
+  <br>
+  <a href="https://github.com/LiDlab/MetaESI/blob/main/results/test/O43791_MetaESI_colored.pdb" target="_blank">O43791_MetaESI_colored.pdb</a>  | 
+  <a href="https://github.com/LiDlab/MetaESI/blob/main/results/test/Q15059_MetaESI_colored.pdb" target="_blank">Q15059_MetaESI_colored.pdb</a>
+</p>
 
 * <span style="color:red">Red</span> regions indicate high-probability interface residues
 * <span style="color:lightblue">Light blue</span> regions indicate low-probability interface residues
@@ -246,10 +257,20 @@ set transparency, 0.7, gray_residues
 
 ### Interface Map Interpretation
 
-
-<p align="center"> <img src="results/test/O43791_Q15059_imap.png" alt="Full interface map" width="35%"> <img src="results/test/O43791_Q15059_hotspot.png" alt="Interface hotspot" width="35%"> <br>O43791_Q15059_imap.pdf   |   O43791_Q15059_hotspot.pdf</p>
+<p align="center">
+  <a href="https://github.com/LiDlab/MetaESI/blob/main/results/test/O43791_Q15059_imap.pdf" target="_blank">
+    <img src="results/test/O43791_Q15059_imap.png" alt="Full interface map" width="35.5%">
+  </a>
+  <a href="https://github.com/LiDlab/MetaESI/blob/main/results/test/O43791_Q15059_hotspot.pdf" target="_blank">
+    <img src="results/test/O43791_Q15059_hotspot.png" alt="Interface hotspot" width="35%">
+  </a>
+  <br>
+  <a href="https://github.com/LiDlab/MetaESI/blob/main/results/test/O43791_Q15059_imap.pdf" target="_blank">O43791_Q15059_imap.pdf</a> | 
+  <a href="https://github.com/LiDlab/MetaESI/blob/main/results/test/O43791_Q15059_hotspot.pdf" target="_blank">O43791_Q15059_hotspot.pdf</a>
+</p>
 
 Left: Full Interface Map (Residue-residue interaction probability matrix)
+
 Right: Zoomed Interface Hotspot (Zoomed 21×21 region centered at maximum probability)
 
 
@@ -324,7 +345,7 @@ MetaESI has established a rigorous gold standard dataset where the positive set 
 We also provide **Gold Standard Positive (GSP) dataset with predicted interface residues**, please [click](https://zenodo.org/records/16730585/files/Supplementary%20Data%204.xlsx?download=1) to download.
 
 * #### [Predicted E3-Substrate Interactome (MetaESI-Atlas)](https://zenodo.org/records/16730585/files/Supplementary%20Data%201.xlsx?download=1)
-MetaESI was used to performed a proteome-wide scan to construct the [MetaESI-Atlas]((https://zenodo.org/records/16730585/files/Supplementary%20Data%201.xlsx?download=1)), comprising 68,056 predicted interactions and binding interfaces between 675 E3s and 18,752 substrates across 8 species.
+MetaESI was used to performed a proteome-wide scan to construct the [MetaESI-Atlas](https://zenodo.org/records/16730585/files/Supplementary%20Data%201.xlsx?download=1), comprising 68,056 predicted interactions and binding interfaces between 675 E3s and 18,752 substrates across 8 species.
 
 
 ## Contact
