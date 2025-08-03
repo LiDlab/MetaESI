@@ -329,9 +329,6 @@ We also provide **Gold Standard Positive (GSP) dataset with predicted interface 
 * #### [Predicted E3-Substrate Interactome (MetaESI-Atlas)](https://zenodo.org/records/16730585/files/Supplementary%20Data%201.xlsx?download=1)
 MetaESI was used to performed a proteome-wide scan to construct the [MetaESI-Atlas]((https://zenodo.org/records/16730585/files/Supplementary%20Data%201.xlsx?download=1)), comprising 68,056 predicted interactions and binding interfaces between 675 E3s and 18,752 substrates across 8 species.
 
-## License
-
-This project is covered under the **Apache 2.0 License**.
 
 ## Contact
 Dianke Li: diankeli@foxmail.com
