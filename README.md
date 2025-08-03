@@ -241,7 +241,7 @@ Color Guide:
 Left: Full Interface Map (Residue-residue interaction probability matrix)
 Right: Zoomed Interface Hotspot (Zoomed 21×21 region centered at maximum probability):
 
-<p align="center"> <img src="results/test/O43791_Q15059_imap.png" alt="Full interface map" width="35%"> <img src="results/test/O43791_Q15059_hotspot.png" alt="Interface hotspot" width="35%"> <br> <em>O43791_Q15059_imap.pdf   |   O43791_Q15059_hotspot.pdf</em> </p>
+<p align="center"> <img src="results/test/O43791_Q15059_imap.png" alt="Full interface map" width="35%"> <img src="results/test/O43791_Q15059_hotspot.png" alt="Interface hotspot" width="35%"> <br>O43791_Q15059_imap.pdf   |   O43791_Q15059_hotspot.pdf</p>
 
 
 **📒 Note:** You may directly include these visualizations in research publications.
@@ -273,7 +273,7 @@ CPU execution: Add `--gpu -1` to command (may take 2-4 minutes per pair)
 
 2. Download datasets:
     ```sh
-    aria2c "https://zenodo.org/records/16730430/files/data.tar.gz?download=1"
+    aria2c "https://zenodo.org/records/16730897/files/data.tar.gz?download=1"
     tar -xzvf data.tar.gz
     ```
 
@@ -284,6 +284,12 @@ CPU execution: Add `--gpu -1` to command (may take 2-4 minutes per pair)
     Note: For incomplete PAE downloads, run:
     ```sh
     scripts/download_alphafold_pae.sh data/human/
+    ```
+
+4. Download all E3-specific models (~2 GB):
+    ```sh
+    aria2c "https://zenodo.org/records/16730897/files/e3_specific_model.zip?download=1"
+    unzip e3_specific_model.zip -d /path/
     ```
 
 ### Feature Generation
