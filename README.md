@@ -42,8 +42,12 @@
 
 
 ## About The Project
-[![MetaESI](https://img.shields.io/github/v/release/Dianke-Li/MetaESI?include_prereleases)](https://github.com/Dianke-Li/MetaESI/releases)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16730430.svg)](https://zenodo.org/records/16730430)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![Platform](https://img.shields.io/badge/platform-linux-blue.svg)
+![Python Version](https://img.shields.io/badge/python-3.8-blue.svg)
+![PyTorch](https://img.shields.io/badge/pytorch-1.12.1-blue.svg)
+![PyG](https://img.shields.io/badge/pyg-2.5.2-blue.svg)
 
 <p align="center">
   <img src="models/Fig1_2.jpg" alt="MetaESI v1.0 architecture" width="900">
@@ -54,19 +58,24 @@
 **MetaESI** is a knowledge-guided interpretable deep learning framework that learns E3-substrate interactions while performing _de novo_ residue-level inference of their binding interfaces. We implemented a two-stage learning strategy for proteome-wide predictions: a meta-learning phase extracts transferable knowledge across multiple tasks, followed by an E3-specific transfer phase that adapts this knowledge to predict interactions for individual E3s. This enabled comprehensive mapping of the E3-substrate interactome with residue-level interface annotations across humans and seven key model organisms, generating the **MetaESI-Atlas**.
 
 #### Key Features
-* ESI Probability Prediction: For any E3-substrate pair
-* Residue-Level Interface Inference: _De novo_ interface identification
-* Research-Ready Visualizations: Direct output of interface maps and annotated PDBs
-* Rapid Setup & Execution: Install in <30 min, predict in <2 min (GPU)
-* Cross-Platform: GPU acceleration or CPU-only mode
+- **ESI Probability Prediction**: Predicts interaction likelihood for any E3-substrate pair
+- **Residue-Level Interface Inference**: Identifies binding interfaces _de novo_
+- **Research-Ready Visualizations**: Generates [interface maps](https://github.com/LiDlab/MetaESI/tree/main#interface-map-interpretation) and [annotated PDB structures](https://github.com/LiDlab/MetaESI/tree/main#pymol-interface-visualization)
+- **Rapid Execution**: Installs in <30 minutes; predictions in <2 minutes (GPU)
+- **Cross-Platform Support**: GPU acceleration or CPU-only operation
+
+
 
 ## Installation
 
 ### Dependencies
-- Python: 3.8
-- Key Packages: [PyTorch](https://pytorch.org/), [PyG](https://pytorch-geometric.readthedocs.io/), [Biopython](https://biopython.org/)
-- OS: Linux (tested on Ubuntu 18.04/22.04)
-- Hardware: NVIDIA GPU recommended (CUDA support). CPU-only mode supported but slower.
+- **Python**: 3.8
+- **Key Packages**: 
+  [PyTorch](https://pytorch.org/) | 
+  [PyG](https://pytorch-geometric.readthedocs.io/) | 
+  [Biopython](https://biopython.org/)
+- **OS**: Linux (tested on Ubuntu 18.04/22.04)
+- **Hardware**: NVIDIA GPU recommended (CUDA support). CPU-only mode supported but slower.
 
 Check [environments.yml](https://github.com/LiDlab/MetaESI/blob/main/environment.yml) for list of needed packages. 
 The specific dependencies can be easily installed using [Anaconda](https://www.anaconda.com/).
@@ -83,7 +92,7 @@ The specific dependencies can be easily installed using [Anaconda](https://www.a
    conda env create -f environment.yml
    conda activate MetaESI
    ```
-   Or install manually the dependencies:
+   Alternative manual installation (recommended):
    ```sh
    conda create -n MetaESI python==3.8
    conda activate MetaESI
@@ -99,7 +108,7 @@ The specific dependencies can be easily installed using [Anaconda](https://www.a
 
 ## Usage
 
-### ESI Prediction & Interface Inference
+### Predicting ESI Interactions & Interfaces
 Predict E3-substrate interactions and identify interface residues:
 ```sh
 python scripts/run_MetaESI.py \
@@ -172,8 +181,7 @@ Processing 1 of 1 batches (2 sequences)
 ==================================================
 ```
 
-#### Output Overview
-After successful execution, you'll find these outputs in results/test/:
+#### Output Files
 
 | File Type |                     Example Files                      | Description |
 |:-------|:------------------------------------------------------:|:------|
@@ -181,9 +189,12 @@ After successful execution, you'll find these outputs in results/test/:
 | `Interface Map` |`O43791_Q15059_imap.pdf`| Full-length interaction probability landscape |
 | `Interface Hotspot` |`O43791_Q15059_hotspot.pdf`| Zoomed view of high-probability interaction regions |
 
-### Visualizing Results
 
-#### PyMOL Interface Visualization
+
+
+## Visualization
+
+### PyMOL Interface Visualization
 
 Visualize interface predictions on the protein structure:
 
@@ -211,10 +222,10 @@ set cartoon_transparency, 0.7, gray_residues
 set transparency, 0.7, gray_residues
 ```
 
-This will create a gradient visualization where:
+Color Guide:
 
 * Red regions indicate high-probability interface residues
-* Blue regions indicate low-probability interface residues
+* Light blue regions indicate low-probability interface residues
 * Gray regions indicate non-interface residues with transparency
 
 <p align="center">
@@ -225,32 +236,23 @@ This will create a gradient visualization where:
 
 
 
-#### Interface Map Interpretation
+### Interface Map Interpretation
 
-Full Interface Map (Residue-residue interaction probability matrix)
+Left: Full Interface Map (Residue-residue interaction probability matrix)
+Right: Zoomed Interface Hotspot (Zoomed 21×21 region centered at maximum probability):
+
+<p align="center"> <img src="results/test/O43791_Q15059_imap.png" alt="Full interface map" width="35%"> <img src="results/test/O43791_Q15059_hotspot.png" alt="Interface hotspot" width="35%"> <br> <em>O43791_Q15059_imap.pdf   |   O43791_Q15059_hotspot.pdf</em> </p>
 
 
-<p align="center">
-  <img src="results/test/O43791_Q15059_imap.png" alt="Interface map visualization between E3 O43791 and substrate Q15059" width="340">
-  <br>
-  O43791_Q15059_imap.pdf
-</p>
+**📒 Note:** You may directly include these visualizations in research publications.
 
-Zoomed Interface Hotspot (Zoomed 21×21 region centered at maximum probability):
-
-<p align="center">
-  <img src="results/test/O43791_Q15059_hotspot.png" alt="Interface map visualization between E3 O43791 and substrate Q15059" width="370">
-  <br>
-  O43791_Q15059_hotspot.pdf
-</p>
-
-**📒 Note:** You may directly include these visualizations in research publications. Download the reference color bar for proper heatmap interpretation:
+#### Color Reference:
 <p align="center">
   <a href="https://github.com/LiDlab/MetaESI/raw/main/results/test/bar.pdf" download>
     <img src="results/test/bar.png" alt="MetaESI heatmap color scale reference" width="40" style="border: 1px solid #eee; border-radius: 4px">
   </a>
   <br>
-  <b>Color Scale Reference</b> (click image to download)
+  (Click to download reference scale for publications)
 </p>
 
 
@@ -261,70 +263,60 @@ CPU execution: Add `--gpu -1` to command (may take 2-4 minutes per pair)
 
 
 
-### Reproducibility
+## Reproducibility
 
-
-1. Download all data:
-
-    * Install `aria2c`. On Debian-based distributions this can be installed by running:
+### Data Setup
+1. Install aria2:
     ```sh
     sudo apt install aria2
-   ```
+    ```
 
-    * Please use the script `scripts/download_all_data.sh` to download and set
-        up all databases. This may take substantial time (download size is ~85
-        GB), so we recommend running this script in the background:
+2. Download datasets:
+    ```sh
+    aria2c "https://zenodo.org/records/16730430/files/data.tar.gz?download=1"
+    tar -xzvf data.tar.gz
+    ```
 
-    ```bash
+3. Download databases (~85 GB):
+    ```sh
     scripts/download_all_data.sh data/human/ > download_all.log &
     ```
-   Note: 有时可能由于网络问题导致有一些PAE文件下载不下来，这时请运行:
-    ```bash
+    Note: For incomplete PAE downloads, run:
+    ```sh
     scripts/download_alphafold_pae.sh data/human/
     ```
 
-2. Preprocess the features:
-   * 生成GARD特征
-    ```sh
-   python gard/preprocessing/preprocessing_features.py
-   ```
-   
-    * 生成MetaESI特征
-   ```sh
-   python metaesi/preprocessing/preprocessing_features.py
-   ```
-   
-3. 进入具体的目录根据需求运行脚本
+### Feature Generation
+ ```sh
+# Generate GARD features
+python gard/preprocessing/preprocessing_features.py
 
-### Folders
-./src contains the implementation for the fivefold cross-validations and independent tests of MetaESI and Baselines.
+# Generate MetaESI features
+python metaesi/preprocessing/preprocessing_features.py
+ ```
 
-./preprocessing contains the selection of gold standard dataset and the coding of protein sequence features and similarity matrix.
+### Repository Structure
+ 
+| Directory |                        Purpose                        |
+|:-------|:-----------------------------------------------------:|
+| `./evaluation` |                 Benchmarking scripts                  |
+| `./gard` | 	Graph Aware Residue Depth (GARD) feature processing  |
+| `./metaesi` |              	Data preprocessing and model architecture              |
+| `./models` |               Pretrained model parameters                |
+| `./results` |              Benchmark and test case outputs              |
+| `./scripts` |               Execution scripts                |
 
-./explain contains the invoking of PairExplainer, which is used to analyze the explainability of the queried ESI.
-
-./results contains MetaESI prediction results, explainable analysis results, and trained MetaESI model.
-
-└──111
 
 
 ## Available Data
 
-* #### [Gold Standard Dataset (GSD)](https://github.com/LiDlab/MetaESI/raw/master/Supplementary%20Tables/Supplementary%20Table%201.xlsx)
-MetaESI has established a rigorous gold standard dataset where the positive set is sourced from [UBibroswer 2.0](http://ubibrowser.bio-it.cn/ubibrowser_v3/) and negative set is derived from [BioGRID](https://thebiogrid.org/). We divided GSD into the cross-validation dataset and the independent test dataset in chronological order.
+* #### [Gold Standard Dataset (GSD)](https://zenodo.org/records/16730585/files/Supplementary%20Data%203.xlsx?download=1)
+MetaESI has established a rigorous gold standard dataset where the positive set is sourced from [UBibroswer 2.0](http://ubibrowser.bio-it.cn/ubibrowser_v3/) and negative set is derived from [STRING](https://www.string-db.org/).
 
-We also provide **Gold Standard Positive Set (GSP) with inferred binding sites**, please [click](https://github.com/LiDlab/MetaESI/raw/master/Supplementary%20Tables/Supplementary%20Table%206.xlsx) to download.
+We also provide **Gold Standard Positive (GSP) dataset with predicted interface residues**, please [click](https://zenodo.org/records/16730585/files/Supplementary%20Data%204.xlsx?download=1) to download.
 
-* #### [Benchmark Dataset](https://github.com/LiDlab/MetaESI/tree/master/results/performance/GSD)
-
-To ensure fair comparison, cross-validation dataset and independent test dataset are intersected with the corresponding datasets from [UbiBrowser 2.0](http://ubibrowser.bio-it.cn/ubibrowser_v3/home/download).
-
-Click to download the [cross-validation results](https://github.com/LiDlab/MetaESI/blob/master/results/performance/GSD/GSD_crossval_prob.csv) and the [independent test results](https://github.com/LiDlab/MetaESI/blob/master/results/performance/GSD/GSD_indtest_prob.csv).
-
-* #### [Predicted E3-Substrate Interaction Dataset (PESID)](https://github.com/LiDlab/MetaESI/raw/master/Supplementary%20Tables/Supplementary%20Table%204.xlsx)
-MetaESI was used to performed a large-scale proteome-wide ESI scanning, resulting in a predicted E3-substrate interaction dataset (PESID) with 19,461 predicted interactions between 85 E3s and 5,151 substrates.
-
-We also provide **PESID with inferred binding sites**, please [click](https://github.com/LiDlab/MetaESI/raw/master/Supplementary%20Tables/Supplementary%20Table%204.xlsx) to download.
+* #### [Predicted E3-Substrate Interactome (MetaESI-Atlas)](https://zenodo.org/records/16730585/files/Supplementary%20Data%201.xlsx?download=1)
+MetaESI was used to performed a proteome-wide scan to construct the [MetaESI-Atlas]((https://zenodo.org/records/16730585/files/Supplementary%20Data%201.xlsx?download=1)), comprising 68,056 predicted interactions and binding interfaces between 675 E3s and 18,752 substrates across 8 species.
 
 ## License
 
