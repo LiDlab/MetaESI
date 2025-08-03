@@ -207,6 +207,8 @@ Visualize interface predictions on the protein structure:
 
 ```pymol
 load O43791_MetaESI_colored.pdb
+# OR
+load Q15059_MetaESI_colored.pdb
 ```
 
 2. Apply the MetaESI interface gradient coloring:
@@ -229,21 +231,12 @@ set transparency, 0.7, gray_residues
 
 Color Guide:
 
-* Red regions indicate high-probability interface residues
-* Light blue regions indicate low-probability interface residues
-* Gray regions indicate non-interface residues with transparency
+* <span style="color:red">Red</span> regions indicate high-probability interface residues
+* <span style="color:lightblue">Light blue</span> regions indicate low-probability interface residues
+* <span style="color:grey">Gray</span> regions indicate non-interface residues with transparency
 
-[//]: # (<p align="center">)
 
-[//]: # (  <img src="results/test/O43791_MetaESI_colored.png" alt="Interface map visualization between E3 O43791 and substrate Q15059" width="370">)
-
-[//]: # (  <br>)
-
-[//]: # (  O43791_MetaESI_colored.pdb)
-
-[//]: # (</p>)
-
-<p align="center"> <img src="results/test/O43791_MetaESI_colored.png" alt="O43791" width="35%"> <img src="results/test/Q15059_MetaESI_colored.png" alt="Q15059" width="35%"> <br>O43791_MetaESI_colored.pdb   |   Q15059_MetaESI_colored.pdb</p>
+<p align="center"> <img src="results/test/O43791_MetaESI_colored.png" alt="O43791" width="42%"> <img src="results/test/Q15059_MetaESI_colored.png" alt="Q15059" width="35%"> <br>O43791_MetaESI_colored.pdb   |   Q15059_MetaESI_colored.pdb</p>
 
 
 
