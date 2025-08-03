@@ -60,13 +60,13 @@
   <b>Figure</b>: MetaESI Overall Architecture
 </p>
 
-**MetaESI** is a knowledge-guided interpretable deep learning framework that learns E3-substrate interactions while performing _de novo_ residue-level inference of their binding interfaces. We implemented a two-stage learning strategy for proteome-wide predictions: a meta-learning phase extracts transferable knowledge across multiple tasks, followed by an E3-specific transfer phase that adapts this knowledge to predict interactions for individual E3s. This enabled comprehensive mapping of the E3-substrate interactome with residue-level interface annotations across humans and seven key model organisms, generating the **MetaESI-Atlas**.
+**MetaESI** is a knowledge-guided interpretable deep learning framework that learns E3-substrate interactions while performing _de novo_ residue-level inference of their binding interfaces. We implemented a two-stage learning strategy for proteome-wide predictions: a meta-learning phase extracts transferable knowledge across multiple tasks, followed by an E3-specific transfer phase that adapts this knowledge to predict interactions for individual E3s. This enabled comprehensive mapping of the E3-substrate interactome with residue-level interface annotations across humans and seven key model organisms, generating the [MetaESI-Atlas](https://zenodo.org/records/16730585/files/Supplementary%20Data%201.xlsx?download=1).
 
 #### Key Features
 - **ESI Probability Prediction**: Predicts interaction likelihood for any E3-substrate pair
 - **Residue-Level Interface Inference**: Identifies binding interfaces _de novo_
 - **Research-Ready Visualizations**: Generates [interface maps](https://github.com/LiDlab/MetaESI/tree/main#interface-map-interpretation) and [annotated PDB structures](https://github.com/LiDlab/MetaESI/tree/main#pymol-interface-visualization)
-- **Rapid Execution**: Installs in <30 minutes; predictions in <2 minutes (GPU)
+- **Rapid Execution**: [Installs](https://github.com/LiDlab/MetaESI/tree/main?tab=readme-ov-file#installation-steps) in <30 minutes; [predictions](https://github.com/LiDlab/MetaESI/tree/main?tab=readme-ov-file#predicting-esi-interactions--interfaces) in <2 minutes (GPU)
 - **Cross-Platform Support**: GPU acceleration or CPU-only operation
 
 
@@ -195,6 +195,11 @@ Processing 1 of 1 batches (2 sequences)
 | `Interface Hotspot` |`O43791_Q15059_hotspot.pdf`| Zoomed view of high-probability interaction regions |
 
 
+#### Runtime Information
+GPU execution (recommended): ~110 seconds per pair
+
+CPU execution: Add `--gpu -1` to command (may take 2-4 minutes per pair)
+
 
 
 ## Visualization
@@ -229,23 +234,23 @@ set cartoon_transparency, 0.7, gray_residues
 set transparency, 0.7, gray_residues
 ```
 
-Color Guide:
+<p align="center"> <img src="results/test/O43791_MetaESI_colored.png" alt="O43791" width="42%"> <img src="results/test/Q15059_MetaESI_colored.png" alt="Q15059" width="35%"> <br>O43791_MetaESI_colored.pdb   |   Q15059_MetaESI_colored.pdb</p>
+
 
 * <span style="color:red">Red</span> regions indicate high-probability interface residues
 * <span style="color:lightblue">Light blue</span> regions indicate low-probability interface residues
 * <span style="color:grey">Gray</span> regions indicate non-interface residues with transparency
 
 
-<p align="center"> <img src="results/test/O43791_MetaESI_colored.png" alt="O43791" width="42%"> <img src="results/test/Q15059_MetaESI_colored.png" alt="Q15059" width="35%"> <br>O43791_MetaESI_colored.pdb   |   Q15059_MetaESI_colored.pdb</p>
-
 
 
 ### Interface Map Interpretation
 
-Left: Full Interface Map (Residue-residue interaction probability matrix)
-Right: Zoomed Interface Hotspot (Zoomed 21×21 region centered at maximum probability):
 
 <p align="center"> <img src="results/test/O43791_Q15059_imap.png" alt="Full interface map" width="35%"> <img src="results/test/O43791_Q15059_hotspot.png" alt="Interface hotspot" width="35%"> <br>O43791_Q15059_imap.pdf   |   O43791_Q15059_hotspot.pdf</p>
+
+Left: Full Interface Map (Residue-residue interaction probability matrix)
+Right: Zoomed Interface Hotspot (Zoomed 21×21 region centered at maximum probability)
 
 
 **📒 Note:** You may directly include these visualizations in research publications.
@@ -260,13 +265,6 @@ Right: Zoomed Interface Hotspot (Zoomed 21×21 region centered at maximum probab
 </p>
 
 
-#### Runtime Information
-GPU execution (recommended): ~110 seconds per pair
-
-CPU execution: Add `--gpu -1` to command (may take 2-4 minutes per pair)
-
-
-
 ## Reproducibility
 
 ### Data Setup
@@ -275,7 +273,7 @@ CPU execution: Add `--gpu -1` to command (may take 2-4 minutes per pair)
     sudo apt install aria2
     ```
 
-2. Download datasets:
+2. Download datasets (~131 MB):
     ```sh
     aria2c "https://zenodo.org/records/16730897/files/data.tar.gz?download=1"
     tar -xzvf data.tar.gz
@@ -295,8 +293,6 @@ CPU execution: Add `--gpu -1` to command (may take 2-4 minutes per pair)
     ```sh
     scripts/download_alphafold_pae.sh data/human/
     ```
-
-
 
 ### Feature Generation
  ```sh
