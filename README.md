@@ -55,7 +55,7 @@
 ![PyG](https://img.shields.io/badge/pyg-2.5.2-blue.svg)
 
 <p align="center">
-  <img src="models/Fig1_2.jpg" alt="MetaESI v1.0 architecture" width="900">
+  <img src="models/Fig1_2.jpg" alt="MetaESI v1.0 architecture" width="85%">
   <br>
   <b>Figure</b>: MetaESI Overall Architecture
 </p>
@@ -233,11 +233,17 @@ Color Guide:
 * Light blue regions indicate low-probability interface residues
 * Gray regions indicate non-interface residues with transparency
 
-<p align="center">
-  <img src="results/test/O43791_MetaESI_colored.png" alt="Interface map visualization between E3 O43791 and substrate Q15059" width="370">
-  <br>
-  O43791_MetaESI_colored.pdb
-</p>
+[//]: # (<p align="center">)
+
+[//]: # (  <img src="results/test/O43791_MetaESI_colored.png" alt="Interface map visualization between E3 O43791 and substrate Q15059" width="370">)
+
+[//]: # (  <br>)
+
+[//]: # (  O43791_MetaESI_colored.pdb)
+
+[//]: # (</p>)
+
+<p align="center"> <img src="results/test/O43791_MetaESI_colored.png" alt="O43791" width="35%"> <img src="results/test/Q15059_MetaESI_colored.png" alt="Q15059" width="35%"> <br>O43791_MetaESI_colored.pdb   |   Q15059_MetaESI_colored.pdb</p>
 
 
 
@@ -282,7 +288,13 @@ CPU execution: Add `--gpu -1` to command (may take 2-4 minutes per pair)
     tar -xzvf data.tar.gz
     ```
 
-3. Download databases (~85 GB):
+3. Download all E3-specific models (~2 GB):
+    ```sh
+    aria2c "https://zenodo.org/records/16730897/files/e3_specific_model.zip?download=1"
+    unzip -o e3_specific_model.zip -d models/e3_specific_model/
+    ```
+
+4. Download databases (~85 GB):
     ```sh
     scripts/download_all_data.sh data/human/ > download_all.log &
     ```
@@ -291,11 +303,7 @@ CPU execution: Add `--gpu -1` to command (may take 2-4 minutes per pair)
     scripts/download_alphafold_pae.sh data/human/
     ```
 
-4. Download all E3-specific models (~2 GB):
-    ```sh
-    aria2c "https://zenodo.org/records/16730897/files/e3_specific_model.zip?download=1"
-    unzip e3_specific_model.zip -d /path/
-    ```
+
 
 ### Feature Generation
  ```sh
