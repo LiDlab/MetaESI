@@ -675,7 +675,7 @@ def run(args):
             protein2_scores[int(order2[j])] = max_score
 
         update_pdb_bfactor(e3_pdb, protein1_scores, args.output_dir / f"{args.e3}_MetaESI_colored.pdb")
-        update_pdb_bfactor(sub_pdb, protein1_scores, args.output_dir / f"{args.candidate_sub}_MetaESI_colored.pdb")
+        update_pdb_bfactor(sub_pdb, protein2_scores, args.output_dir / f"{args.candidate_sub}_MetaESI_colored.pdb")
 
         print(f"  • Annotated PDBs: {args.e3}_MetaESI_colored.pdb, {args.candidate_sub}_MetaESI_colored.pdb")
 
@@ -687,3 +687,4 @@ if __name__ == "__main__":
     parser = create_parser()
     args = parser.parse_args()
     run(args)
+
