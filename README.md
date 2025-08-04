@@ -106,6 +106,7 @@ The specific dependencies can be easily installed using [Anaconda](https://www.a
    pip install learn2learn==0.2.0
    conda install pandas==1.5.3
    conda install h5py==3.11.0 biopython==1.78 matplotlib==3.7.1 seaborn==0.13.2
+   pip install fair-esm
    ```
 
 ## Usage
@@ -196,6 +197,8 @@ Processing 1 of 1 batches (2 sequences)
 GPU execution (recommended): ~110 seconds per pair
 
 CPU execution: Add `--gpu -1` to command (may take 2-4 minutes per pair)
+
+**📒 Note:** The first run requires loading the [ESM2](https://github.com/facebookresearch/esm) pretrained model (~2.5 GB), which may take additional time.
 
 
 
