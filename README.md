@@ -105,10 +105,7 @@ The specific dependencies can be easily installed using [Anaconda](https://www.a
    conda install pytorch pytorch-cuda=11.8 -c pytorch -c nvidia
    pip install learn2learn==0.2.0
    conda install pandas==1.5.3
-   conda install h5py==3.11.0
-   conda install biopython==1.78
-   conda install matplotlib==3.7.1
-   conda install seaborn==0.13.2
+   conda install h5py==3.11.0 biopython==1.78 matplotlib==3.7.1 seaborn==0.13.2
    ```
 
 ## Usage
