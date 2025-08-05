@@ -79,7 +79,7 @@
   [PyTorch](https://pytorch.org/) | 
   [PyG](https://pytorch-geometric.readthedocs.io/) | 
   [Biopython](https://biopython.org/)
-- **OS**: Linux (tested on Ubuntu 18.04/22.04)
+- **OS**: Linux (tested on **Ubuntu 18.04/22.04** and **CentOS 8.5**)
 - **Hardware**: NVIDIA GPU recommended (CUDA support). CPU-only mode supported but slower.
 
 Check [environments.yml](https://github.com/LiDlab/MetaESI/blob/main/environment.yml) for list of needed packages. 
@@ -291,7 +291,11 @@ Right: Zoomed Interface Hotspot (Zoomed 21×21 region centered at maximum probab
 ### Data Setup
 1. Install aria2:
     ```sh
+    # Ubuntu
     sudo apt install aria2
+    # CentOS
+    sudo yum install epel-release -y
+    sudo yum install aria2 -y
     ```
 
 2. Download datasets (~131 MB):
