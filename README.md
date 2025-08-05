@@ -247,13 +247,9 @@ set transparency, 0.7, gray_residues
   <a href="https://github.com/LiDlab/MetaESI/blob/main/results/test/Q15059_MetaESI_colored.pdb" target="_blank">Q15059_MetaESI_colored.pdb</a>
 </p>
 
-<span style="color:red">Red</span> regions indicate high-probability interface residues
-<p style="color:red">Red regions indicate...</p>
-<span style="color:lightblue">Light blue</span> regions indicate low-probability interface residues
-
-<span style="color:grey">Gray</span> regions indicate non-interface residues with transparency
-
-
+- <span style="color:red">Red</span> regions indicate high-probability interface residues
+- <span style="color:lightblue">Light blue</span> regions indicate low-probability interface residues
+- <span style="color:grey">Gray</span> regions indicate non-interface residues with transparency
 
 
 ### Interface Map Interpretation
