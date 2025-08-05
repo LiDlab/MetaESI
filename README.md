@@ -234,7 +234,6 @@ set cartoon_transparency, 0.7, gray_residues
 set transparency, 0.7, gray_residues
 ```
 
-[//]: # (<p align="center"> <img src="results/test/O43791_MetaESI_colored.png" alt="O43791" width="42%"> <img src="results/test/Q15059_MetaESI_colored.png" alt="Q15059" width="35%"> <br>O43791_MetaESI_colored.pdb   |   Q15059_MetaESI_colored.pdb</p>)
 
 <p align="center">
   <a href="https://github.com/LiDlab/MetaESI/blob/main/results/test/O43791_MetaESI_colored.pdb" target="_blank">
@@ -249,7 +248,7 @@ set transparency, 0.7, gray_residues
 </p>
 
 <span style="color:red">Red</span> regions indicate high-probability interface residues
-
+<p style="color:red">Red regions indicate...</p>
 <span style="color:lightblue">Light blue</span> regions indicate low-probability interface residues
 
 <span style="color:grey">Gray</span> regions indicate non-interface residues with transparency
