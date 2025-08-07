@@ -26,20 +26,16 @@ mkdir -p "${DOWNLOAD_DIR}/esm2"
 SEQUENCE_FILE="${DOWNLOAD_DIR}/features/MetaESI_seq.fasta"
 
 # Create target directory structure
-if [ ! -f "$SEQUENCE_FILE" ]; then
-    echo "Generating protein sequences..."
-    SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
-    PY_REL_PATH="../metaesi/preprocessing/obtain_protein_sequence.py"
-    PY_ABS_PATH="${SCRIPT_DIR}/${PY_REL_PATH}"
+echo "Generating protein sequences..."
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
+PY_REL_PATH="../metaesi/preprocessing/obtain_protein_sequence.py"
+PY_ABS_PATH="${SCRIPT_DIR}/${PY_REL_PATH}"
 
-    if [ ! -f "$PY_ABS_PATH" ]; then
-        echo "Error: obtain_protein_sequence.py not found in current directory"
-        exit 1
-    fi
-    python "$PY_ABS_PATH"
-else
-    echo "Sequence file already exists. Skipping generation."
+if [ ! -f "$PY_ABS_PATH" ]; then
+    echo "Error: obtain_protein_sequence.py not found in current directory"
+    exit 1
 fi
+python "$PY_ABS_PATH"
 
 echo "Processing sequences with ESM-2..."
 python scripts/run_ESM2.py esm2_t33_650M_UR50D "${SEQUENCE_FILE}" \
