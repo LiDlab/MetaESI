@@ -596,10 +596,10 @@ def run(args):
         ax.spines['right'].set_visible(True)
         ax.spines['top'].set_visible(True)
         ax.spines['bottom'].set_visible(True)
-        ax.spines['left'].set_linewidth(1)  # 设置边框线宽
-        ax.spines['right'].set_linewidth(1)  # 设置边框线宽
-        ax.spines['top'].set_linewidth(1)  # 设置边框线宽
-        ax.spines['bottom'].set_linewidth(1)  # 设置边框线宽
+        ax.spines['left'].set_linewidth(1)
+        ax.spines['right'].set_linewidth(1)
+        ax.spines['top'].set_linewidth(1)
+        ax.spines['bottom'].set_linewidth(1)
         ax.spines['left'].set_color('black')
         ax.spines['right'].set_color('black')
         ax.spines['top'].set_color('black')
@@ -693,3 +693,4 @@ if __name__ == "__main__":
     parser = create_parser()
     args = parser.parse_args()
     run(args)
+
