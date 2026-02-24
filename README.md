@@ -55,7 +55,7 @@
 ![PyG](https://img.shields.io/badge/pyg-2.5.2-blue.svg)
 
 <p align="center">
-  <img src="models/Fig1_2.jpg" alt="MetaESI v1.0 architecture" width="85%">
+  <img src="models/figure1_github.png" alt="MetaESI v1.0 architecture" width="85%">
   <br>
   <b>Figure</b>: MetaESI Overall Architecture
 </p>
