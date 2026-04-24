@@ -1,4 +1,4 @@
-<h1 align="center">MetaESI</h1>
+<h1 align="center">π-MetaESI</h1>
 
 
 <!-- TABLE OF CONTENTS -->
@@ -60,7 +60,7 @@
   <b>Figure</b>: MetaESI Overall Architecture
 </p>
 
-**MetaESI** is a knowledge-guided interpretable deep learning framework that learns E3-substrate interactions while performing _de novo_ residue-level inference of their binding interfaces. We implemented a two-stage learning strategy for proteome-wide predictions: a meta-learning phase extracts transferable knowledge across multiple tasks, followed by an E3-specific transfer phase that adapts this knowledge to predict interactions for individual E3s. This enabled comprehensive mapping of the E3-substrate interactome with residue-level interface annotations across humans and seven key model organisms, generating the [MetaESI-Atlas](https://zenodo.org/records/16730585/files/Supplementary%20Data%201.xlsx?download=1).
+π-MetaESI is a user-friendly software based on **MetaESI** architecture, which is a knowledge-guided interpretable deep learning framework that learns E3-substrate interactions while performing _de novo_ residue-level inference of their binding interfaces. We implemented a two-stage learning strategy for proteome-wide predictions: a meta-learning phase extracts transferable knowledge across multiple tasks, followed by an E3-specific transfer phase that adapts this knowledge to predict interactions for individual E3s. This enabled comprehensive mapping of the E3-substrate interactome with residue-level interface annotations across humans and seven key model organisms, generating the [MetaESI-Atlas](https://zenodo.org/records/16730585/files/Supplementary%20Data%201.xlsx?download=1).
 
 #### Key Features
 - **ESI Probability Prediction**: Predicts interaction likelihood for any E3-substrate pair
